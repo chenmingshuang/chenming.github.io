@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>媳妇加油--摸摸大</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="space"/><span class="comments">我亲爱的地瓜宝宝</span><br/>
+			<span class="comments">嘿嘿嘿！你好我是猴子请来的</span><br />
+			还记得这句话吗媳妇儿<br />
+			我很庆幸自己当时认识了你<br />
+			同时也贼苦恼认识了你<br/>
+			嗨！好气啊<br/>
+			因为从此以后脑袋里就有一个小小可爱的身影挥之不去了！！<br/>
+			有你陪伴的一路，走来让我学会了很多很多我也改变了很多哦<br />
+			我大宝贝媳妇儿棒棒滴！！！<br/>
+			嘿嘿嘿<br />
+			这应该是上天对我的一种眷恋<br/>
+			<br>
+			我想对我可爱的小地瓜说:<br />
+			记住媳妇儿无论怎样<br />
+			你的背后有一个爱你的老公--陳长老（猥琐了点儿）<br/>
+			你老公的肩膀虽然不宽（有点个的慌）但还是能给我大宝贝儿媳妇儿依靠<br/>
+			嘿嘿嘿<br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					宝贝媳妇，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					贼稀罕你<br/>
+					<div class="signature">- 陈长老</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2015, 05, 21);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 8000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
